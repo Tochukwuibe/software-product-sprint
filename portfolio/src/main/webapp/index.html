@@ -2,17 +2,283 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <title>Toch's Portfolio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
-  </body>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Toch's Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#about">About</a>
+
+                <a class="nav-item nav-link" href="#projects">Projects</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section id="landing" class="section">
+
+        <div class="container">
+            <img src="/images/landing_pic.jpeg" alt="Tochukwu Ibe-Ekeocha">
+            <h1>Tochukwu Ibe-Ekeocha</h1>
+            <h3>Software Developer, Enterprenure, Tech Enthusiast</h3>
+        </div>
+
+    </section>
+
+    <section id="about" class="section ">
+
+        <div class="container">
+            <h1 class="section-title">About</h1>
+
+            <div class="row flex-cads">
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Personal</h3>
+                            <ion-icon class="icon" name="person"></ion-icon>
+                            <button id="personal-btn" onclick="personal_modal.style.display = 'flex'" type="button"
+                                class="btn btn-light">View</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Education</h3>
+                            <ion-icon class="icon" name="school"></ion-icon>
+                            <button type="button" onclick="education_modal.style.display = 'flex'"
+                                class="btn btn-light">View</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Skills</h3>
+                            <ion-icon class="icon" name="basketball"></ion-icon>
+                            <button type="button" onclick="skills_modal.style.display = 'flex'"
+                                class="btn btn-light">View</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body card-content">
+                            <h3 class="card-title">Hobbies</h3>
+                            <ion-icon class="icon" name="hammer"></ion-icon>
+                            <button type="button" onclick="hobbies_modal.style.display = 'flex'"
+                                class="btn btn-light">View</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <!-- Modal -->
+            <div id="personal_modal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Personal</h3>
+                        <span onclick="personal_modal.style.display = 'none'" class="close">&times;</span>
+                    </div>
+                    <p>
+                        Nigerian by birth, moved to the United States in 2010.
+                        I quickly became interested in being a sucessful enterprenure, inspired by names
+                        like Bill Gates, Steve Jobs, etc..
+                        I discovered the development side of the web during my junior year of High School, and have been
+                        dabbling in it ever since.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Modal -->
+            <div id="education_modal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Education</h3>
+                        <span onclick="education_modal.style.display = 'none'" class="close">&times;</span>
+                    </div>
+                    <p>Sophmore Computer Science student at the University of Maryland at College Park.</p>
+                </div>
+
+            </div>
+
+
+            <!-- Modal -->
+            <div id="skills_modal" class="modal">
+
+
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Skills</h3>
+                        <span onclick="skills_modal.style.display = 'none'" class="close">&times;</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Java</li>
+                        <li class="list-group-item">JavaScript</li>
+                        <li class="list-group-item">HTML</li>
+                        <li class="list-group-item">CSS</li>
+                        <li class="list-group-item">React.js</li>
+                        <li class="list-group-item">React Native</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <!-- Modal -->
+            <div id="hobbies_modal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Hobbies</h3>
+                        <span onclick="hobbies_modal.style.display = 'none'" class="close">&times;</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Chess</li>
+                        <li class="list-group-item">Enterprenurship</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="projects" class="section bg-dark">
+        <h1 class="section-title">Projects</h1>
+        <div class="container">
+
+
+            <div class="row flex-cads">
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="/images/skiffel_logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Skiffel (Android)</h5>
+                            <p class="card-text">
+                                Android application for promoting and discovering social events.
+                            </p>
+                            <a href="https://play.google.com/store/apps/details?id=com.skffl.skiffel" target="_blank"
+                                class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="/images/skiffel_logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Skiffel (Ios)</h5>
+                            <p class="card-text">
+                                Ios application for promoting and discovering social events.
+                            </p>
+                            <a href="https://apps.apple.com/bn/app/skiffel/id1475384987" target="_blank"
+                                class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="/images/skiffel_logo.png" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Skiffel (web)</h5>
+                            <p class="card-text">
+                                website to market skiffle.
+                            </p>
+                            <a href="https://skiffel.web.app/home" target="_blank" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img class="card-img-top" src="/images/debt_defender.jpeg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Debt defender</h5>
+                            <p class="card-text">
+                                Application built to help college students make better financial deciaions. Built furing
+                                a hackaton.
+                            </p>
+                            <a href="https://firestore-84244.firebaseapp.com/" target="_blank"
+                                class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="footer">
+        <h1 class="section-title">Contact</h1>
+        <footer class="bg-light">
+            <div class="row">
+
+                <div class="col"></div>
+                <div class="col">
+                    <ion-icon name="logo-linkedin"
+                        onclick="window.open('https://www.linkedin.com/in/tochukwu-ibe-ekeocha-949bb2170/')"></ion-icon>
+
+                </div>
+                <div class="col">
+                    <ion-icon name="logo-github" onclick="window.open('https://github.com/Tochukwuibe')"></ion-icon>
+                </div>
+                <div class="col"></div>
+            </div>
+        </footer>
+    </section>
+
+
+
+
+    <script src="/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+</body>
+
 </html>
