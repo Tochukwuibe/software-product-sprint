@@ -1,4 +1,4 @@
-const api = "https://8080-dot-10864018-dot-devshell.appspot.com"
+const api = ""
 
 window.addEventListener("DOMContentLoaded", () => {
 
