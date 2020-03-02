@@ -71,3 +71,9 @@ async function getRandomQuoteUsingAsyncAwait() {
   const quote = await response.text();
   document.getElementById('quote-container').innerText = quote;
 }
+
+async function getFavoriteQuote() {
+  const response = await fetch('/favorite-quote');
+  const quote = await response.text();
+  document.getElementById('quote-container').innerText = quote;
+}

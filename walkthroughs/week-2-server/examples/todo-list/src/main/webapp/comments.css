@@ -1,0 +1,23 @@
+body {
+    overflow-y: none;
+}
+
+#messages-container {
+    margin-top: 60px;
+    height: 100vh;
+    overflow: none;
+}
+
+
+#messages-container .card {
+    height: 85%;
+}
+
+#footer {
+    height: 60px;
+}
+
+#footer .card {
+ height: 100%;
+ padding: 10px;
+}

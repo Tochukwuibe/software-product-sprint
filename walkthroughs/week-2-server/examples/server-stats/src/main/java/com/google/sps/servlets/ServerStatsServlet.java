@@ -69,8 +69,10 @@ public final class ServerStatsServlet extends HttpServlet {
    * the Gson library dependency to pom.xml.
    */
   private String convertToJsonUsingGson(ServerStats serverStats) {
+    
     Gson gson = new Gson();
     String json = gson.toJson(serverStats);
+
     return json;
   }
 }

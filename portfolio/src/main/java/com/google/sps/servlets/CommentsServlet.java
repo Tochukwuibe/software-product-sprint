@@ -14,31 +14,42 @@
 
 package com.google.sps.servlets;
 
-import com.google.appengine.api.datastore.DatastoreService;
-import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.google.appengine.api.datastore.Entity;
+
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+import com.google.sps.data.*;
 
-/** Servlet responsible for creating new tasks. */
-@WebServlet("/new-task")
-public class NewTaskServlet extends HttpServlet {
+/** Servlet that returns some example content. TODO: modify this file to handle comments data */
+@WebServlet("/comments")
+public class CommentsServlet extends HttpServlet {
+
+  private Comments comments;
+  
+
+    @Override
+    public void init() {
+        comments = Comments.getInstance();
+    }
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+    response.setContentType("application/json");
+    response.getWriter().println(comments.getComments());
+
+  }
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    String title = request.getParameter("title");
-    long timestamp = System.currentTimeMillis();
-    
-    Entity taskEntity = new Entity("Task");
-    taskEntity.setProperty("title", title);
-    taskEntity.setProperty("timestamp", timestamp);
 
-    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-    datastore.put(taskEntity);
+    response.setContentType("application/json");
+    response.getWriter().println(comments.create(request.getParameter("text")));
 
-    response.sendRedirect("/index.html");
   }
+
+  
 }
